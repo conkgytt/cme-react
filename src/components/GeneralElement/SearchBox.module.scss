@@ -1,0 +1,86 @@
+@import "../../styles/package/ALL_PACKAGE";
+
+.searchBox {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	position: fixed;
+	inset: 0;
+	will-change: auto;
+	z-index: 99;
+	pointer-events: none;
+
+	&.show {
+		pointer-events: unset;
+		background-color: rgba(0, 0, 0, 0.3);
+
+		.searchBar {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	.searchBar {
+		width: 100%;
+		color: #aaa;
+		position: absolute;
+		padding: 1rem;
+		transform: translateY(-100%);
+		transition: ease 500ms;
+		opacity: 0;
+
+		> input {
+			width: 100%;
+			height: 5rem;
+			display: block;
+			border-radius: 1rem;
+			background-color: #fff;
+			box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+			padding-inline: 2rem 5rem;
+			transition: ease 300ms;
+
+			&:not(:placeholder-shown) {
+				& ~ .resetValueIcon {
+					visibility: visible;
+				}
+
+				& ~ .searchIcon {
+					visibility: hidden;
+				}
+			}
+		}
+
+		> i {
+			width: 4rem;
+			height: 4rem;
+			font-size: 1.6rem;
+			display: flex;
+			position: absolute;
+			top: 50%;
+			right: 1rem;
+			transform: translateY(-50%);
+			transition: color ease 300ms;
+
+			&::before {
+				margin: auto;
+			}
+		}
+
+		.resetValueIcon {
+			color: rgb(255, 189, 189);
+			visibility: hidden;
+		}
+
+		.searchIcon {
+			color: $primaryColor;
+			pointer-events: none;
+		}
+	}
+
+	.searchResultList {
+	}
+
+	.background {
+		flex-grow: 1;
+	}
+}

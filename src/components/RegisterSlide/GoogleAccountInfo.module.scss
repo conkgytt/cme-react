@@ -1,0 +1,65 @@
+@import "../../styles/package/ALL_PACKAGE";
+
+.googleAccountInfoWrapper {
+	color: $textColor;
+
+	.title {
+		margin-top: 3rem;
+		font-weight: 500;
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	.googleAccountInfo {
+		margin-top: 0.8rem;
+		display: flex;
+		align-items: center;
+		padding: 1.4rem 1.8rem;
+		border-radius: 0.5rem;
+		box-shadow: 0 0.2rem 0.4rem 0.2rem rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+
+		.avatarContainer > img {
+			height: 7rem;
+			border-radius: 50%;
+			box-shadow: 0 0 0 0.2rem $primaryColor;
+		}
+
+		.infoContainer {
+			width: calc(100% - 7rem);
+			height: 100%;
+			font-size: 1.3rem;
+			margin-left: 1.4rem;
+
+			.googleNameContainer,
+			.emailContainer {
+				display: flex;
+
+				span:first-child {
+					font-weight: bold;
+					width: 6rem;
+				}
+
+				span:last-child {
+					width: calc(100% - 6rem);
+					overflow: hidden;
+					margin-left: 0.6rem;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+				}
+			}
+
+			.emailContainer {
+				margin-top: 0.6rem;
+			}
+		}
+	}
+
+	.separateLabel {
+		color: $textColorLight;
+		font-size: 1.3rem;
+		text-align: center;
+		margin-block: 1.6rem 0.6rem;
+	}
+}

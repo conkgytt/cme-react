@@ -1,0 +1,33 @@
+@import "../../styles/package/ALL_PACKAGE";
+
+.navigationBarRight {
+	$iconSize: 1.6rem;
+
+	display: flex;
+	align-items: center;
+
+	.notify,
+	.search {
+		> i {
+			padding: 1rem;
+			font-size: $iconSize;
+			border-radius: 50%;
+			transition: all 0.2s ease;
+
+			&:hover {
+				cursor: pointer;
+				background-color: #eee;
+			}
+		}
+	}
+
+	.profile {
+		@include flexCenter();
+		margin-left: 1rem;
+
+		> img {
+			@include size(4rem);
+			border-radius: 50%;
+		}
+	}
+}

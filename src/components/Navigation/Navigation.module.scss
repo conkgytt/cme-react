@@ -1,0 +1,21 @@
+@import "../../styles/package/ALL_PACKAGE";
+
+.navigationBarWrapper {
+	box-shadow: 0.2rem 0 0.6rem 0 rgba(0, 0, 0, 0.15);
+	background-color: #fff;
+
+	.navigationBar {
+		@include maxSize(120rem, false);
+		@include size(100%, 5.2rem);
+		@include flex(row, center, space-between);
+		margin-inline: auto;
+		padding-inline: 1rem;
+
+		.navigationBarLeft {
+			i {
+				font-size: 2rem;
+				opacity: 0.4;
+			}
+		}
+	}
+}

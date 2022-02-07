@@ -1,0 +1,138 @@
+@import "../../styles/package/ALL_PACKAGE";
+
+.profileBox {
+	position: fixed;
+	inset: 0;
+	background: #fff;
+	opacity: 0;
+	transform: translateY(100%);
+	transform-origin: bottom;
+	transition: ease 600ms;
+	will-change: auto;
+	z-index: 99;
+
+	&.show {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.head {
+		height: 5rem;
+		background: #fff;
+		color: $textColor;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-inline: 2rem;
+		box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.1);
+
+		> span {
+			font-size: 1.6rem;
+			font-weight: 500;
+
+			> i {
+				margin-right: 0.8rem;
+			}
+		}
+
+		> i {
+			width: 3rem;
+			height: 3rem;
+			display: flex;
+			font-size: 1.6rem;
+			align-items: center;
+			justify-content: center;
+			transition: ease 300ms;
+			border-radius: 0.4rem;
+
+			&:hover {
+				box-shadow: 0 0 0.4rem 0.1rem rgba(0, 0, 0, 0.1);
+			}
+		}
+	}
+
+	.body {
+		padding: 1rem;
+		height: calc(100% - 5rem);
+		overflow-y: auto;
+
+		.profileContainer {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 2rem;
+			padding: 1rem;
+
+			.avatarContainer {
+				> img {
+					$avatarSize: 8rem;
+
+					width: $avatarSize;
+					height: $avatarSize;
+					border-radius: 50%;
+					box-shadow: 0 0 0 0.3rem rgba($primaryColor, 0.8);
+				}
+			}
+
+			.infoContainer {
+				color: $primaryColor;
+				text-align: center;
+
+				> span {
+					font-size: 1.8rem;
+					font-weight: 600;
+					margin-top: 1.4rem;
+					display: block;
+				}
+
+				> p {
+					opacity: 0.6;
+					font-size: 1.4rem;
+					font-weight: 500;
+				}
+			}
+		}
+
+		.directionsContainer {
+			.userAction,
+			.directActions {
+				color: $primaryColorBlack;
+				margin-top: 4rem;
+				padding: 1rem;
+
+				> h3 {
+					font-size: 1.6rem;
+					font-weight: 800;
+					text-align: center;
+				}
+
+				.listActions {
+					margin-top: 1rem;
+
+					.action {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						font-size: 1.4rem;
+						font-weight: 500;
+						background-color: #fafafa;
+						padding: 1.4rem 2rem;
+						border-radius: 1rem;
+
+						&:hover {
+							background-color: #eee;
+						}
+
+						&:not(:first-child) {
+							margin-top: 1rem;
+						}
+					}
+				}
+			}
+
+			.userAction {
+				margin-top: 8rem;
+			}
+		}
+	}
+}

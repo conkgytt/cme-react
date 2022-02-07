@@ -1,0 +1,25 @@
+@import "../../styles/package/ALL_PACKAGE";
+
+.loginGoogleAccountButton {
+	@include size(100%, false);
+	@include setBtn(#fff, #eee, 0.2rem, ease 300ms);
+	border: 0.2rem solid #eee;
+	border-radius: 0.6rem;
+	margin-top: 1rem;
+
+	p {
+		@include size(100%, 4.6rem);
+		@include flex(row, center, center);
+
+		img {
+			@include size(false, 100%);
+			padding: 1.2rem;
+		}
+
+		span {
+			color: $primaryColorBlack;
+			font-size: 1.4rem;
+			font-weight: 500;
+		}
+	}
+}

@@ -1,0 +1,129 @@
+@import "../../styles/package/ALL_PACKAGE";
+
+.listField {
+	&.error {
+		> input {
+			color: red !important;
+			border-color: red !important;
+		}
+
+		> span,
+		p {
+			color: red !important;
+		}
+	}
+
+	& ~ p.error {
+		@include flex(row, center);
+		color: red;
+		font-size: 1.3rem;
+		padding-left: 0.4rem;
+		margin-top: 0.4em;
+
+		i {
+			margin-right: 0.4rem;
+		}
+	}
+
+	& ~ p.alert {
+		width: 100%;
+		color: $primaryColorBlack;
+		font-size: 1.3rem;
+		background-color: #f1f1f1;
+		border-radius: 0.4rem;
+		margin-top: 0.6rem;
+		transition: ease 300ms;
+
+		&:not(:empty) {
+			padding: 1rem;
+		}
+	}
+}
+
+.listField {
+	@include size(100%, 4rem);
+	display: block;
+	position: relative;
+	margin-top: 2.6rem;
+	border: 0.2rem solid #ccc;
+	border-radius: 0.8rem;
+	color: $textColor;
+	font-size: 1.5rem;
+
+	> span {
+		@include flex(row, center, center);
+		@include position(absolute, 50%, false, false, 1.3rem);
+		transform: translateY(-4rem);
+		transition: ease 300ms;
+		user-select: none;
+		pointer-events: none;
+		will-change: transform;
+
+		p {
+			margin-left: 0.8rem;
+		}
+	}
+
+	> p {
+		@include position(absolute, 50%, false, false, 1.3rem);
+		transform: translateY(-50%);
+	}
+
+	> input {
+		display: none;
+
+		&:checked {
+			& ~ i {
+				transform: rotate(180deg);
+			}
+
+			& ~ ul {
+				transform: scaleY(1);
+			}
+		}
+	}
+
+	> i {
+		@include position(absolute, 50%, 1rem);
+		transform: translateY(calc(-50% - 0.3rem));
+		transform-origin: center 40%;
+		font-size: 1.8rem;
+	}
+
+	> ul {
+		@include size(calc(100% + 0.4rem), false);
+		@include position(
+			absolute,
+			calc(100% - 0.5rem),
+			false,
+			false,
+			-0.2rem
+		);
+		background-color: #fff;
+		border-width: 0 0.2rem 0.2rem;
+		border-style: solid;
+		border-color: #ccc;
+		border-radius: 0 0 0.8rem 0.8rem;
+		transform: scaleY(0);
+		transition: ease 300ms;
+		transform-origin: top;
+		z-index: 1;
+
+		> li {
+			@include flex(row, center, space-between);
+			font-size: 1.4rem;
+			padding: 1rem;
+
+			&.rankIsChecked,
+			&:hover {
+				color: $primaryColorBlack;
+				background-color: rgba($primaryColor, 0.075);
+			}
+
+			i {
+				font-size: 1.8rem;
+				color: $primaryColor;
+			}
+		}
+	}
+}

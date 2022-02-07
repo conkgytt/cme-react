@@ -1,0 +1,25 @@
+@import "../../styles/package/ALL_PACKAGE";
+
+.profileRegisterForm {
+	margin-top: 3rem;
+
+	.profileFormTitle {
+		color: $textColor;
+		font-size: 1.6rem;
+		font-weight: 500;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	.submitRegisterBtn {
+		@include size(100%, 4.6rem);
+		@include setBtn($primaryColor, #ececec, 0.2rem, ease 300ms);
+		border: 0.2rem solid #eee;
+		border-radius: 0.6rem;
+		margin-top: 2rem;
+
+		p {
+			font-weight: 500;
+		}
+	}
+}

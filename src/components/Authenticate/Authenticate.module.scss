@@ -1,0 +1,64 @@
+@import "../../styles/package/ALL_PACKAGE";
+
+.authCtn {
+	@include size(100vw, 100vh);
+	background-image: linear-gradient(
+		135deg,
+		$primaryColor,
+		$primaryColorDark
+	);
+	display: flex;
+
+	.authBox {
+		@include size(100rem, false);
+		@include maxSize(96%, 90%);
+		@include flex(column, center);
+		margin: 1rem auto auto;
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		border-radius: 0.8rem;
+		overflow-y: auto;
+		overflow-x: hidden;
+		position: relative;
+		background: rgba(255, 255, 255, 0.2);
+
+		.thumbSlide {
+			@include size(100%, false);
+
+			img {
+				filter: brightness(0.9);
+			}
+		}
+
+		.authSlide {
+			width: 100%;
+			padding: 2rem;
+			background: #fff;
+			border-radius: inherit;
+			border-top-left-radius: 2rem;
+			border-top-right-radius: 2rem;
+		}
+
+		.backToHomePageBtn {
+			@include flex(row, center);
+			@include position(absolute, 1rem, false, false, 1rem);
+			color: $primaryColorDark;
+			border-radius: 10rem;
+			background: rgba(#fff, 0.5);
+			padding: 0.6rem 1.2rem;
+			text-decoration: none;
+
+			i:first-child {
+				font-size: 1.6rem;
+			}
+
+			i:last-child {
+				font-size: 1.4rem;
+				margin-left: 0.5rem;
+			}
+		}
+	}
+}
+
+// PC
+@media screen and (min-width: 43.75rem) {
+}
