@@ -22,12 +22,14 @@ function Navigation() {
 	return (
 		<div className={clsx(styles.navigationBarWrapper)}>
 			<nav className={clsx(styles.navigationBar)}>
-				<div className={clsx(styles.navigationBarLeft)}>
-					<i
-						className="far fa-bars"
-						onClick={handleShowLeftPanel}
-					></i>
-				</div>
+				{isSignedUp && (
+					<div className={clsx(styles.navigationBarLeft)}>
+						<i
+							className="far fa-bars"
+							onClick={handleShowLeftPanel}
+						></i>
+					</div>
+				)}
 
 				{isSignedUp ? (
 					<NavRightLogged

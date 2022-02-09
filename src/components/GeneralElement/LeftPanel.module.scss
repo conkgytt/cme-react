@@ -22,7 +22,7 @@
 		max-width: 90%;
 		position: absolute;
 		inset: 0 auto 0 0;
-		background-color: #eeeeee;
+		background-color: #fff;
 		overflow: hidden;
 		transform: translateX(-100%);
 		transition: ease 500ms;
@@ -61,6 +61,74 @@
 
 		.body {
 			margin-top: 1rem;
+
+			.profileContainer {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 2rem;
+				background-color: rgba(#000, 0.05);
+				border-radius: 0 0 15% 0;
+				margin-top: 4rem;
+
+				&:hover {
+					cursor: pointer;
+					background-color: rgba($primaryColorBlack, 0.2);
+				}
+
+				.avatar {
+					$avatarSize: 7rem;
+
+					width: $avatarSize;
+					height: $avatarSize;
+					border-radius: 50%;
+					box-shadow: 0 0 0 0.2rem $primaryColor;
+				}
+
+				.infoContainer {
+					color: rgb(99, 100, 128);
+					margin-left: 3rem;
+
+					.name {
+						font-size: 1.6rem;
+						font-weight: 500;
+						margin-bottom: 0.2rem;
+					}
+
+					.classRoomName {
+						font-size: 1.3rem;
+					}
+
+					.email {
+						font-size: 1.3rem;
+						opacity: 0.8;
+					}
+				}
+			}
+
+			.navigationListWrapper {
+				margin-top: 9rem;
+
+				> section {
+					border-top: 0.1rem solid #eeeeee;
+					padding-block: 2rem;
+
+					> * {
+						max-width: calc(100% - 2rem);
+						height: 5.4rem;
+						display: block;
+						border-radius: 0 1rem 1rem 0;
+
+						&:not(:first-child) {
+							margin-top: 1rem;
+						}
+
+						&:hover {
+							background-color: #f1f1f1;
+						}
+					}
+				}
+			}
 		}
 	}
 
